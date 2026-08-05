@@ -1,90 +1,190 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Progate</title>
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <title>Hello,Kamoenai! - 学んで遊ぶ村の魅力</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <div class="container">
-      <div class="header-left">
-        <img class="logo" src="https://prog-8.com/images/html/advanced/main_logo.png">
-      </div>
-      <span class="fa fa-bars menu-icon"></span>
-      <div class="header-right">
-        <a href="#">レッスン</a>
-        <a href="#">新規登録</a>
-        <a href="#" class="login">ログイン</a>
-      </div>
+    <div class="header-container">
+      <div class="logo" onclick="navigate('home')">🌊 学べる村かもえない</div>
+      <nav>
+        <ul id="nav-menu">
+          <li><a href="#" onclick="navigate('home')">ホーム</a></li>
+          <li><a href="#" onclick="navigate('learn')">学ぶ</a></li>
+          <li><a href="#" onclick="navigate('quiz')">村の検定</a></li>
+          <li><a href="#" onclick="navigate('stamp')">スタンプ</a></li>
+          <li><a href="#" onclick="navigate('mypage')">マイページ</a></li>
+          <li><a href="#" onclick="navigate('bbs')">掲示板</a></li>
+        </ul>
+      </nav>
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
     </div>
   </header>
-  <div class="top-wrapper">
-    <div class="container">
-      <h1>LEARN TO CODE.<br>LEARN TO BE CREATIVE.</h1>
-      <p>Progateはオンラインプログラミング学習サービスです。<br>初心者にもやさしいスライドとレッスンで、ウェブサービスを作りながらプログラミングを学んでいきましょう。</p>
-      <div class="btn-wrapper">
-        <a href="#" class="btn signup">新規登録はこちら</a>
-        <p>or</p>
-        <a href="#" class="btn facebook"><span class="fa fa-facebook"></span>Facebookで登録</a>
-        <a href="#" class="btn twitter"><span class="fa fa-twitter"></span>Twitterで登録</a>
+
+  <main id="app">
+    
+    <section id="sec-home" class="page-section active">
+      <div class="hero">
+        <h1>海と歴史が交差する村、<br>神恵内を体験しよう！</h1>
+        <p>学んで、遊んで、スタンプを集めて、神恵内マスターを目指そう。</p>
+        <button class="btn btn-large" onclick="navigate('learn')">さっそく学ぶ</button>
       </div>
-    </div>
-  </div>
-  <div class="lesson-wrapper">
-    <div class="container">
-      <div class="heading">
-        <h2>Learn Where to Get Started!</h2>
-      </div>
-      <div class="lessons">
-        <div class="lesson">
-          <div class="lesson-icon">
-            <img src="https://prog-8.com/images/html/advanced/html.png">
-            <p>HTML & CSS</p>
-          </div>
-          <p class="text-contents">ウェブページの作成に使用される言語です。HTMLとCSSを組み合わせることで、静的なページを作り上げることができます。</p>
+      <div class="container grid-cards">
+        <div class="card" onclick="navigate('learn')">
+          <div class="card-icon">📖</div>
+          <h3>学ぶ・遊ぶ</h3>
+          <p>村の歴史や自然、ニシン漁のゲームなどを通じて神恵内を知ろう。</p>
         </div>
-        <div class="lesson">
-          <div class="lesson-icon">
-            <img src="https://prog-8.com/images/html/advanced/jQuery.png">
-            <p>jQuery</p>
-          </div>
-          <p class="text-contents">素敵な動きを手軽に実装できるJavaScriptライブラリです。 アニメーション効果をつけたり、Ajax（エイジャックス）を使って外部ファイルを読み込んだりと色々なことができます。</p>
+        <div class="card" onclick="navigate('quiz')">
+          <div class="card-icon">📝</div>
+          <h3>村の検定</h3>
+          <p>学んだ知識をクイズでテスト！正解して経験値をゲットしよう。</p>
         </div>
-        <div class="lesson">
-          <div class="lesson-icon">
-            <img src="https://prog-8.com/images/html/advanced/ruby.png">
-            <p>Ruby</p>
-          </div>
-          <p class="text-contents">オープンソースの動的なプログラミング言語で、 シンプルさと高い生産性を備えています。大きなWebアプリケーションから小さな日用ツールまで、さまざまなソフトウェアを作ることができます。</p>
-        </div>
-        <div class="lesson">
-          <div class="lesson-icon">
-            <img src="https://prog-8.com/images/html/advanced/php.png">
-            <p>PHP</p>
-          </div>
-          <p class="text-contents">HTMLだけではページの内容を変えることはできません。PHPはHTMLにプログラムを埋め込み、それを可能にします。</p>
+        <div class="card" onclick="navigate('stamp')">
+          <div class="card-icon">🗺️</div>
+          <h3>スタンプラリー</h3>
+          <p>バーチャル観光で名所を巡り、スタンプをコンプリートしよう。</p>
         </div>
       </div>
-      <div class="clear"></div>
-    </div>
-  </div>
-  <div class="message-wrapper">
-    <div class="container">
-      <div class="heading">
-        <h2>さぁ、あなたもProgateでプログラミングを学んでみませんか?</h2>
-        <h3>Let's learn to code, learn to be creative!</h3>
+
+      <div class="container">
+        <div class="chatbot-container">
+          <div class="chatbot-header">
+            🤖 神恵内村 AI案内ボット (NotebookLM連携デモ)
+          </div>
+          <div class="chatbot-messages" id="chatbot-messages">
+            <div class="message bot">
+              <div class="msg-bubble">
+                こんにちは！神恵内村の観光情報や最新ニュースについて何でも聞いてください。<br>
+                （例：「おすすめのお寿司は？」「温泉はある？」「最近の村長選挙について教えて」「夏のお祭りは？」など）
+              </div>
+            </div>
+          </div>
+          <div class="chatbot-input">
+            <input type="text" id="chatbot-input-text" placeholder="質問を入力してください..." onkeypress="handleChatKeyPress(event)">
+            <button class="btn" onclick="sendChatMessage()">送信</button>
+          </div>
+        </div>
       </div>
-      <span class="btn message">さっそく開発する</span>
-    </div>
-  </div>
+    </section>
+
+    <section id="sec-learn" class="page-section">
+      <div class="container">
+        <h2 class="section-title">神恵内村について学ぶ・遊ぶ</h2>
+        <div class="grid-cards">
+          <div class="card">
+            <div class="thumb video-thumb">▶️ 歴史動画</div>
+            <h3>神恵内村とニシンの歴史</h3>
+            <p>五十嵐浩二さんが語る、ニシンで栄えた村の貴重な歴史映像です。</p>
+            <button class="btn" onclick="openModal('video')">動画を見る</button>
+          </div>
+          <div class="card">
+            <div class="thumb game-thumb">🎮 ミニゲーム</div>
+            <h3>ニシン漁ゲーム</h3>
+            <p>船を操作してニシンを獲ろう！障害物を避けて大漁を目指せ！</p>
+            <button class="btn" onclick="openModal('game')">ゲームを遊ぶ</button>
+          </div>
+          <div class="card">
+            <div class="thumb slide-thumb">📊 スライド資料</div>
+            <h3>カーボンニュートラルについて</h3>
+            <p>神恵内村が取り組む環境施策やカーボンニュートラルの資料を閲覧できます。</p>
+            <button class="btn btn-outline" onclick="openModal('pdf')">スライドを見る</button>
+          </div>
+          <div class="card">
+            <div class="thumb book-thumb">📚 デジタル絵本</div>
+            <h3>神恵内村の昔ばなし</h3>
+            <p>村に伝わる古い物語を、親しみやすい絵本形式で読んでみよう。</p>
+            <a href="https://gemini.google.com/share/d8e54b3c0d6f" target="_blank" class="btn btn-block" style="text-align:center; text-decoration:none; display:inline-block; box-sizing:border-box;">絵本を開く (外部サイト)</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sec-quiz" class="page-section">
+      <div class="container">
+        <h2 class="section-title">神恵内村の検定</h2>
+        <p style="text-align: center; margin-bottom: 2rem;">クイズに正解して経験値（EXP）を貯めよう！</p>
+        <div id="quiz-container" class="quiz-box"></div>
+      </div>
+    </section>
+
+    <section id="sec-stamp" class="page-section">
+      <div class="container">
+        <h2 class="section-title">バーチャルスタンプラリー</h2>
+        <p style="text-align: center; margin-bottom: 2rem;">名所を巡ってスタンプを集めよう！すべて集めると素敵な特典が…？</p>
+        <div id="stamp-progress" class="stamp-progress">
+          スタンプ獲得状況: <span id="stamp-count">0</span> / 4
+        </div>
+        <div id="complete-msg" class="complete-msg hidden">
+          🎉 コンプリート！オリジナルグッズ応募資格をゲットしました！ 🎉
+        </div>
+        <div class="grid-cards" id="stamp-spots"></div>
+      </div>
+    </section>
+
+    <section id="sec-mypage" class="page-section">
+      <div class="container">
+        <h2 class="section-title">マイページ</h2>
+        <div class="profile-card">
+          <div class="avatar-area">
+            <div id="user-avatar" class="avatar-icon">👦</div>
+            <button class="btn btn-small btn-outline" onclick="changeAvatar()">アバター変更</button>
+          </div>
+          <div class="profile-info">
+            <h3 id="user-name">ゲスト さんの記録</h3>
+            <div class="status-row">
+              <span class="status-label">称号 (ランク):</span>
+              <span id="user-rank" class="status-value rank-badge">見習い村民</span>
+            </div>
+            <div class="status-row">
+              <span class="status-label">経験値 (EXP):</span>
+              <span id="user-exp" class="status-value">0</span>
+            </div>
+            <div class="status-row">
+              <span class="status-label">集めたスタンプ:</span>
+              <span id="user-stamps" class="status-value">0 個</span>
+            </div>
+            <div class="exp-bar-container">
+              <div id="exp-bar" class="exp-bar"></div>
+            </div>
+            <p class="hint-text">※ クイズやスタンプでEXPを貯めると称号がランクアップします！</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sec-bbs" class="page-section">
+      <div class="container">
+        <h2 class="section-title">村民交流掲示板</h2>
+        <p style="text-align: center; margin-bottom: 2rem;">神恵内村の感想や、クイズのヒントを共有しよう！</p>
+        <div class="bbs-form card">
+          <h3>新しく投稿する</h3>
+          <input type="text" id="bbs-name" placeholder="お名前 (例: かもえない太郎)" value="ゲスト">
+          <textarea id="bbs-message" rows="3" placeholder="神恵内村のここが好き！など自由に書いてください。"></textarea>
+          <button class="btn" onclick="submitPost()">投稿する</button>
+        </div>
+        <div id="bbs-list" class="bbs-list"></div>
+      </div>
+    </section>
+
+  </main>
+
   <footer>
-    <div class="container">
-      <img src="https://prog-8.com/images/html/advanced/footer_logo.png">
-      <p>Learn to Code, Learn to be Creative.</p>
-    </div>
+    <p>&copy; 2026 Hello,Kamoenai! デモ版. All rights reserved.</p>
   </footer>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal()">×</button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast hidden">経験値を獲得しました！</div>
+
+  <script src="script.js"></script>
 </body>
 </html>
